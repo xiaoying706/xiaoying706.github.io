@@ -9,23 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --blue: #0057a8;
-      --blue-dark: #003d7a;
-      --blue-light: #1a7fd4;
-      --green: #1a7a3c;
-      --orange: #c8600a;
-      --accent: #e8a020;
-      --text: #1a1a2e;
-      --text-muted: #5a6478;
-      --bg: #f5f7fb;
-      --white: #ffffff;
-      --border: #dde3ee;
+      --blue: #0057a8; --blue-dark: #003d7a; --blue-light: #1a7fd4;
+      --green: #1a7a3c; --orange: #c8600a;
+      --accent: #e8a020; --text: #1a1a2e; --text-muted: #5a6478;
+      --bg: #f5f7fb; --white: #ffffff; --border: #dde3ee;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Noto Sans SC', sans-serif; color: var(--text); background: var(--white); }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(0,30,70,0.97); backdrop-filter: blur(10px);
@@ -40,21 +32,13 @@
     .nav-links a:hover { color: var(--accent); }
     .nav-lang { color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid var(--accent); padding: 4px 12px; border-radius: 3px; }
 
-    /* HERO */
     #home {
       min-height: 100vh; background: linear-gradient(135deg, #001a3d 0%, #003580 50%, #0057a8 100%);
       display: flex; align-items: center; padding: 80px 5% 60px;
       position: relative; overflow: hidden;
     }
-    #home::before {
-      content: ''; position: absolute; inset: 0;
-      background: url('images/dgy_crane.jpg') center/cover no-repeat;
-      opacity: 0.15;
-    }
-    #home::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
-      background: linear-gradient(transparent, var(--white));
-    }
+    #home::before { content: ''; position: absolute; inset: 0; background: url('images/dgy_crane.jpg') center/cover no-repeat; opacity: 0.15; }
+    #home::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(transparent, var(--white)); }
     .hero-content { position: relative; z-index: 1; max-width: 720px; }
     .hero-tag { display: inline-block; background: var(--accent); color: white; font-size: 11px; font-weight: 700; letter-spacing: 3px; padding: 5px 14px; margin-bottom: 24px; }
     .hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 6vw, 72px); font-weight: 800; color: white; line-height: 1.05; margin-bottom: 12px; }
@@ -62,21 +46,16 @@
     .hero-slogan { font-size: 15px; color: rgba(255,255,255,0.7); letter-spacing: 4px; margin-bottom: 32px; }
     .hero-desc { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.8; max-width: 560px; margin-bottom: 36px; }
     .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary { background: var(--accent); color: white; padding: 13px 30px; font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 2px; letter-spacing: 1px; transition: background 0.2s; }
+    .btn-primary { background: var(--accent); color: white; padding: 13px 30px; font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
     .btn-primary:hover { background: #c8880f; }
     .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: white; padding: 11px 28px; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 2px; transition: all 0.2s; }
     .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
 
-    .product-img img { width: 100%; height: 100%; object-fit: contain; background: #f2f6fb; transition: transform 0.4s; }
-    .product-card:hover .product-img img { transform: scale(1.05); }
-
-    /* STATS */
     .stats-bar { background: var(--blue-dark); padding: 28px 5%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
     .stat { text-align: center; color: white; }
     .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; color: var(--accent); line-height: 1; }
     .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; letter-spacing: 1px; }
 
-    /* SECTION */
     section { padding: 72px 5%; }
     .section-header { text-align: center; margin-bottom: 52px; }
     .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: var(--blue); text-transform: uppercase; margin-bottom: 10px; display: block; }
@@ -85,7 +64,6 @@
     .section-desc { color: var(--text-muted); font-size: 14px; line-height: 1.8; max-width: 640px; margin: 14px auto 0; }
     .divider { width: 48px; height: 4px; background: var(--accent); margin: 14px auto 0; }
 
-    /* ABOUT */
     #about { background: var(--bg); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
     .about-text p { color: var(--text-muted); font-size: 14px; line-height: 1.9; margin-bottom: 14px; }
@@ -97,41 +75,32 @@
     .field-card h4 { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 7px; }
     .field-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
-    /* PRODUCT TABS */
     #products { background: white; }
-    .tab-nav { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 40px; overflow-x: auto; }
-    .tab-btn {
-      padding: 14px 28px; font-size: 14px; font-weight: 700; cursor: pointer;
-      border: none; background: none; color: var(--text-muted);
-      border-bottom: 3px solid transparent; margin-bottom: -2px;
-      white-space: nowrap; transition: all 0.2s; font-family: inherit;
-    }
+    .tab-nav { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 40px; overflow-x: auto; }
+    .tab-btn { padding: 14px 28px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; background: none; color: var(--text-muted); border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: all 0.2s; font-family: inherit; }
     .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
     .tab-btn:hover { color: var(--blue); }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* CAT LABEL COLORS */
-    .cat-blue { background: var(--blue); }
-    .cat-green { background: var(--green); }
-    .cat-orange { background: var(--orange); }
-
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
     .product-card { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,57,128,0.12); }
-    .product-img { height: 200px; background: #e8eef5; overflow: hidden; position: relative; }
-    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .product-img { height: 210px; background: #e8eef5; overflow: hidden; position: relative; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.4s; }
     .product-card:hover .product-img img { transform: scale(1.05); }
     .product-cat { position: absolute; top: 12px; left: 12px; color: white; font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 3px 10px; }
+    .cat-blue { background: var(--blue); }
+    .cat-green { background: var(--green); }
+    .cat-orange { background: var(--orange); }
     .product-body { padding: 18px; }
     .product-body h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 7px; }
     .product-body p { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px; }
     .product-specs { display: flex; gap: 8px; flex-wrap: wrap; }
     .spec-tag { background: var(--bg); color: var(--blue); font-size: 11px; padding: 3px 9px; border-radius: 2px; font-weight: 600; }
-    .spec-tag-green { background: #e8f5ee; color: var(--green); }
-    .spec-tag-orange { background: #fef0e6; color: var(--orange); }
+    .spec-green { background: #e8f5ee; color: var(--green); }
+    .spec-orange { background: #fef0e6; color: var(--orange); }
 
-    /* PROJECTS */
     #projects { background: var(--blue-dark); }
     #projects .section-title { color: white; }
     #projects .section-tag { color: var(--accent); }
@@ -143,7 +112,6 @@
     .project-card h3 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 8px; }
     .project-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
 
-    /* SERVICES */
     #services { background: var(--bg); }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
     .service-card { text-align: center; padding: 32px 20px; border: 1px solid var(--border); border-radius: 4px; background: white; transition: border-color 0.2s, box-shadow 0.2s; }
@@ -152,7 +120,6 @@
     .service-card h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 9px; }
     .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
-    /* CONTACT */
     #contact { background: white; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; max-width: 960px; margin: 0 auto; }
     .contact-info h3 { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 22px; }
@@ -166,22 +133,16 @@
     .contact-form h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; border: 1px solid var(--border); border-radius: 3px;
-      padding: 9px 12px; font-size: 13px; font-family: inherit;
-      color: var(--text); background: white; transition: border-color 0.2s;
-    }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; border: 1px solid var(--border); border-radius: 3px; padding: 9px 12px; font-size: 13px; font-family: inherit; color: var(--text); background: white; transition: border-color 0.2s; }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--blue); }
     .form-group textarea { height: 90px; resize: vertical; }
     .form-submit { width: 100%; background: var(--blue); color: white; border: none; padding: 12px; font-size: 14px; font-weight: 700; border-radius: 3px; cursor: pointer; font-family: inherit; transition: background 0.2s; }
     .form-submit:hover { background: var(--blue-dark); }
     .form-note { font-size: 11px; color: var(--text-muted); margin-top: 8px; text-align: center; }
 
-    /* FOOTER */
     footer { background: #001229; color: rgba(255,255,255,0.6); padding: 28px 5%; text-align: center; font-size: 12px; }
     footer strong { color: rgba(255,255,255,0.9); }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -190,7 +151,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#home">
     <div>
@@ -206,10 +166,9 @@
     <li><a href="#services">服务支持</a></li>
     <li><a href="#contact">联系我们</a></li>
   </ul>
-  <a class="nav-lang" href="index-en.html">English</a>
+  <a class="nav-lang" href="index-en">English</a>
 </nav>
 
-<!-- HERO -->
 <section id="home">
   <div class="hero-content">
     <span class="hero-tag">LIVE BY QUALITY AND TRUST · 以质取信 以品生存</span>
@@ -224,7 +183,6 @@
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats-bar">
   <div class="stat"><div class="stat-num">3</div><div class="stat-label">核心产品系列</div></div>
   <div class="stat"><div class="stat-num">30+</div><div class="stat-label">设备型号</div></div>
@@ -233,7 +191,6 @@
   <div class="stat"><div class="stat-num">全球</div><div class="stat-label">中东·东南亚·俄罗斯·非洲</div></div>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-header">
     <span class="section-tag">COMPANY PROFILE</span>
@@ -262,21 +219,20 @@
     <div>
       <div class="field-card">
         <h4>◆ 管道施工装备</h4>
-        <p>提供吊管机、全液压焊接工作站、坡口机、中频加热器、对口器、弯管机、喷砂除锈工作站、无线数据采集器、防风棚、吊篮等15种专用施工设备。</p>
+        <p>提供吊管机、全液压焊接工作站、坡口机、中频加热器、对口器、弯管机、喷砂除锈工作站、无线数据采集器、防风棚、吊篮等专用施工设备。</p>
       </div>
-      <div class="field-card" style="border-left-color: var(--green);">
-        <h4 style="color:var(--green);">◆ 山地施工装备</h4>
+      <div class="field-card" style="border-left-color:var(--green)">
+        <h4 style="color:var(--green)">◆ 山地施工装备</h4>
         <p>专为山地复杂地形研发，包括YG系列履带运管机、山地吊管机、全回转吊管机、山地挖掘机、山地焊接工作站、柔性内对口器、抓管器、隧道施工专用设备等。</p>
       </div>
-      <div class="field-card" style="border-left-color: var(--orange);">
-        <h4 style="color:var(--orange);">◆ 维抢修装备</h4>
+      <div class="field-card" style="border-left-color:var(--orange)">
+        <h4 style="color:var(--orange)">◆ 维抢修装备</h4>
         <p>提供中频加热器、分瓣式切管坡口机、加热消磁一体机、管口校正器、防腐层剥离机、履带抢修车等专业设备，并承接维抢修工程技术服务。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
 <section id="products">
   <div class="section-header">
     <span class="section-tag">PRODUCT CENTER</span>
@@ -285,349 +241,288 @@
     <div class="divider"></div>
     <p class="section-desc">三大产品系列，30余种设备型号，全面覆盖管道施工各类工况需求。</p>
   </div>
-
-  <!-- TAB NAV -->
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="showTab('tab1')">🔵 管道施工装备</button>
-    <button class="tab-btn" onclick="showTab('tab2')">🟢 山地施工装备</button>
-    <button class="tab-btn" onclick="showTab('tab3')">🟠 维抢修装备</button>
+    <button class="tab-btn active" onclick="showTab('tab1',this)">🔵 管道施工装备</button>
+    <button class="tab-btn" onclick="showTab('tab2',this)">🟢 山地施工装备</button>
+    <button class="tab-btn" onclick="showTab('tab3',this)">🟠 维抢修装备</button>
   </div>
 
-  <!-- TAB 1: 管道施工装备 -->
+  <!-- 管道施工装备 -->
   <div class="tab-content active" id="tab1">
     <div class="products-grid">
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/dgy_crane.jpg" alt="DGY系列吊管机" loading="lazy" />
-          <span class="product-cat cat-blue">PIPE LAYING</span>
-        </div>
+        <div class="product-img"><img src="images/dgy_crane.jpg" alt="DGY系列吊管机" loading="lazy" /><span class="product-cat cat-blue">PIPE LAYING</span></div>
         <div class="product-body">
-          <h3>DGY系列吊管机（履带起重机）</h3>
+          <h3>DGY系列吊管机</h3>
           <p>主要用于管道施工过程中运布管、组对、管道下沟等作业。底盘采用山推吊管机专用底盘，液压先导控制，操作轻便简单。</p>
-          <div class="product-specs">
-            <span class="spec-tag">DGY90 / 70 / 45 / 25</span>
-            <span class="spec-tag">最大起重 90t</span>
-            <span class="spec-tag">适用海拔≤3600m</span>
-          </div>
+          <div class="product-specs"><span class="spec-tag">DGY90/70/45/25</span><span class="spec-tag">最大起重90t</span><span class="spec-tag">海拔≤3600m</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/hy_welding.jpg" alt="HY系列全液压焊接工作站" loading="lazy" />
-          <span class="product-cat cat-blue">WELDING</span>
-        </div>
+        <div class="product-img"><img src="images/hy_welding.jpg" alt="HY系列全液压焊接工作站" loading="lazy" /><span class="product-cat cat-blue">WELDING</span></div>
         <div class="product-body">
           <h3>HY系列全液压焊接工作站</h3>
-          <p>集行走、发电、焊接、随车吊于一体，履带式全液压焊接平台，适用于长输管道野外作业。−20℃~+50℃环境温度下稳定运行。</p>
-          <div class="product-specs">
-            <span class="spec-tag">HY160 / HY180</span>
-            <span class="spec-tag">发电 177kW</span>
-            <span class="spec-tag">360°随车吊</span>
-          </div>
+          <p>集行走、发电、焊接、随车吊于一体，履带式全液压焊接平台，适用于长输管道野外作业，−20℃~+50℃稳定运行。</p>
+          <div class="product-specs"><span class="spec-tag">HY160/HY180</span><span class="spec-tag">发电177kW</span><span class="spec-tag">360°随车吊</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/ky_beveling.jpg" alt="KY系列坡口机" loading="lazy" />
-          <span class="product-cat cat-blue">BEVELING</span>
+        <div class="product-img"><img src="images/wheel_welding.jpg" alt="HL系列轮式焊接工作站" loading="lazy" /><span class="product-cat cat-blue">WELDING</span></div>
+        <div class="product-body">
+          <h3>HL系列轮式焊接工作站</h3>
+          <p>选用东方红轮式拖拉机为载机，行驶速度高、通过能力强、转场方便，为管道焊接提供移动电源，超大安装平台满足所有焊接工艺设备搭载需求。</p>
+          <div class="product-specs"><span class="spec-tag">轮式底盘</span><span class="spec-tag">机动灵活</span><span class="spec-tag">大载重平台</span></div>
         </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/ky_beveling.jpg" alt="KY系列坡口机" loading="lazy" /><span class="product-cat cat-blue">BEVELING</span></div>
         <div class="product-body">
           <h3>KY系列坡口机</h3>
-          <p>管道建设常用移动式管端坡口整形设备，可出X、U、V等各种类型坡口，适应手工焊、半自动焊、全自动焊接需求。</p>
-          <div class="product-specs">
-            <span class="spec-tag">8"—64" 管径</span>
-            <span class="spec-tag">KY0814~KY5664</span>
-            <span class="spec-tag">液压马达驱动</span>
-          </div>
+          <p>管道建设常用移动式管端坡口整形设备，可加工X、U、V等各种类型坡口，适应手工焊、半自动焊、全自动焊接需求。</p>
+          <div class="product-specs"><span class="spec-tag">8"—64"管径</span><span class="spec-tag">KY0814~KY5664</span><span class="spec-tag">液压驱动</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/mid_heating.jpg" alt="中频加热工作站" loading="lazy" />
-          <span class="product-cat cat-blue">HEATING</span>
-        </div>
+        <div class="product-img"><img src="images/large_beveling.jpg" alt="大口径管口坡口机" loading="lazy" /><span class="product-cat cat-blue">BEVELING</span></div>
         <div class="product-body">
-          <h3>中频加热器 / 中频加热工作站</h3>
-          <p>用于管道焊前预热、焊后热处理，有效控制焊接质量，防止冷裂纹产生。配备无线测温系统，实时监控加热温度。</p>
-          <div class="product-specs">
-            <span class="spec-tag">履带式自行走</span>
-            <span class="spec-tag">无线测温</span>
-            <span class="spec-tag">精准控温</span>
-          </div>
+          <h3>大口径管口坡口机（1219mm）</h3>
+          <p>专为直径1219mm（48英寸）大口径钢管设计，可现场快速完成V型、U型、复合坡口等多种坡口加工，坡口角度可调（30°/37.5°/45°）。</p>
+          <div class="product-specs"><span class="spec-tag">Φ1219mm专用</span><span class="spec-tag">自动进给</span><span class="spec-tag">角度可调</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/py_sandblast.jpg" alt="PY系列密闭式喷砂除锈工作站" loading="lazy" />
-          <span class="product-cat cat-blue">RUST REMOVAL</span>
-        </div>
+        <div class="product-img"><img src="images/mid_heating.jpg" alt="RDZ系列中频加热站" loading="lazy" /><span class="product-cat cat-blue">HEATING</span></div>
         <div class="product-body">
-          <h3>PY系列密闭式喷砂除锈工作站</h3>
-          <p>移动式管口喷砂除锈设备，由液控履带行走底盘、发电机组、空压机组、喷砂回收机组组成，360°无死角自动密闭喷砂除锈，效率高、费用低。</p>
-          <div class="product-specs">
-            <span class="spec-tag">PY180 / PY220</span>
-            <span class="spec-tag">Sa2.5~3级</span>
-            <span class="spec-tag">回收率>99%</span>
-          </div>
+          <h3>RDZ系列中频加热工作站</h3>
+          <p>用于管道焊前预热、焊后热处理，有效控制焊接质量，防止冷裂纹产生。履带式自行走，配备无线测温系统，实时监控加热温度。</p>
+          <div class="product-specs"><span class="spec-tag">履带自行走</span><span class="spec-tag">无线测温</span><span class="spec-tag">精准控温</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/hwz_infrared.jpg" alt="HWZ系列红外线加热工作站" loading="lazy" />
-          <span class="product-cat cat-blue">HEATING</span>
-        </div>
+        <div class="product-img"><img src="images/hwz_infrared.jpg" alt="HWZ系列红外线加热工作站" loading="lazy" /><span class="product-cat cat-blue">HEATING</span></div>
         <div class="product-body">
           <h3>HWZ系列红外线加热工作站</h3>
-          <p>移动式管口补口设备，由液控履带行走底盘、发电机组、加热控制柜、红外线加热器等组成，采用无名火红外线加热，主要用于防腐补口作业中热收缩带自动收缩。</p>
-          <div class="product-specs">
-            <span class="spec-tag">HWZ120</span>
-            <span class="spec-tag">加热功率 120kW</span>
-            <span class="spec-tag">工作半径 15m</span>
-          </div>
+          <p>移动式管口补口设备，采用无名火红外线加热方式，主要应用于防腐补口作业中热收缩带自动收缩。加热功率120kW，工作半径15m。</p>
+          <div class="product-specs"><span class="spec-tag">HWZ120</span><span class="spec-tag">加热功率120kW</span><span class="spec-tag">工作半径15m</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/ky_beveling.jpg" alt="外对口器气动内对口器" loading="lazy" />
-          <span class="product-cat cat-blue">ALIGNMENT</span>
-        </div>
+        <div class="product-img"><img src="images/py_sandblast.jpg" alt="PY系列密闭式喷砂除锈工作站" loading="lazy" /><span class="product-cat cat-blue">RUST REMOVAL</span></div>
         <div class="product-body">
-          <h3>外对口器 / 气动内对口器</h3>
-          <p>用于管道焊接前的管端对口定位，确保管道同轴度，提高焊接质量与效率。多种规格满足不同管径需求。</p>
-          <div class="product-specs">
-            <span class="spec-tag">多口径规格</span>
-            <span class="spec-tag">液压/气动</span>
-            <span class="spec-tag">高精度对口</span>
-          </div>
+          <h3>PY系列密闭式喷砂除锈工作站</h3>
+          <p>移动式管口喷砂除锈设备，360°无死角自动密闭喷砂除锈，喷砂质量稳定，效率高，费用低。回收率大于99%。</p>
+          <div class="product-specs"><span class="spec-tag">PY180/PY220</span><span class="spec-tag">Sa2.5~3级</span><span class="spec-tag">回收率>99%</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/wireless_data.jpg" alt="无线数据采集器" loading="lazy" />
-          <span class="product-cat cat-blue">DATA</span>
+        <div class="product-img"><img src="images/inner_aligner.jpg" alt="DNQ系列气动内对口器" loading="lazy" /><span class="product-cat cat-blue">ALIGNMENT</span></div>
+        <div class="product-body">
+          <h3>DNQ系列气动内对口器</h3>
+          <p>用于管道焊接前的管端内对口定位，确保管道同轴度，提高焊接质量与效率。多种规格满足不同管径需求。</p>
+          <div class="product-specs"><span class="spec-tag">气动驱动</span><span class="spec-tag">多管径规格</span><span class="spec-tag">高精度对口</span></div>
         </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/outer_aligner.jpg" alt="DW系列外对口器" loading="lazy" /><span class="product-cat cat-blue">ALIGNMENT</span></div>
+        <div class="product-body">
+          <h3>DW系列外对口器</h3>
+          <p>管道焊接前外部对口定位设备，结构轻巧，夹持可靠，适用于各类管径的管道对口作业，确保焊口质量。</p>
+          <div class="product-specs"><span class="spec-tag">外部对口</span><span class="spec-tag">多规格</span><span class="spec-tag">轻便可靠</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/pipe_bender.jpg" alt="CB系列垂直液压弯管机" loading="lazy" /><span class="product-cat cat-blue">BENDING</span></div>
+        <div class="product-body">
+          <h3>CB系列垂直液压弯管机</h3>
+          <p>适用于管道铺设中弯头加工，可现场弯制不同弧度，减少焊口数量，提高施工效率。液压驱动，弯管精度高。</p>
+          <div class="product-specs"><span class="spec-tag">液压驱动</span><span class="spec-tag">多弯度</span><span class="spec-tag">现场作业</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/inner_welder.jpg" alt="IWM内焊机器人" loading="lazy" /><span class="product-cat cat-blue">WELDING</span></div>
+        <div class="product-body">
+          <h3>IWM内焊机器人</h3>
+          <p>电液驱动技术，锂离子电池组供电，液压驱动线性鞋使管道圆润化，快速响应电磁制动系统，尺寸大幅减小，转弯能力大幅提升，适用于陡峭山道施工。</p>
+          <div class="product-specs"><span class="spec-tag">电液驱动</span><span class="spec-tag">锂电池供电</span><span class="spec-tag">智能制动</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/wireless_data.jpg" alt="无线数据采集器" loading="lazy" /><span class="product-cat cat-blue">DATA</span></div>
         <div class="product-body">
           <h3>无线数据采集器 GS-NT3.0</h3>
-          <p>扫码获取焊口二维码、操作人员二维码、设备二维码，实时采集加热温度、工作压力等设备工作信息上传至机组一体机。</p>
-          <div class="product-specs">
-            <span class="spec-tag">WiFi双频传输</span>
-            <span class="spec-tag">传输距离≥1km</span>
-            <span class="spec-tag">精度±1℃</span>
-          </div>
+          <p>扫码获取焊口、操作人员、设备二维码，实时采集加热温度、工作压力等施工数据上传至机组一体机，实现施工质量数字化管理。</p>
+          <div class="product-specs"><span class="spec-tag">WiFi双频</span><span class="spec-tag">传输距离≥1km</span><span class="spec-tag">精度±1℃</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/wind_shelter.jpg" alt="防风棚" loading="lazy" /><span class="product-cat cat-blue">SHELTER</span></div>
+        <div class="product-body">
+          <h3>防风棚</h3>
+          <p>专门针对管道施工沟上焊接研制的新型防风棚，整体采用拼装结构，具有防风、防雨、防火等特殊工况需求，内部配有两个排烟风扇，加大排烟能力。</p>
+          <div class="product-specs"><span class="spec-tag">FP22/2436/4056</span><span class="spec-tag">拼装结构</span><span class="spec-tag">防风防雨</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/pipe_basket.jpg" alt="吊篮" loading="lazy" /><span class="product-cat cat-blue">LIFTING</span></div>
+        <div class="product-body">
+          <h3>吊篮</h3>
+          <p>管道焊接完工后下沟作业专用吊具，重量轻、起重能力强。专用聚氨酯挂轮耐磨性高，保护管道防腐层。滚轮轴承密封防水防沙，拆卸容易，存储运输方便。</p>
+          <div class="product-specs"><span class="spec-tag">重量轻</span><span class="spec-tag">保护防腐层</span><span class="spec-tag">防水防沙</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/hyva_crane_arm.jpg" alt="海沃液压吊臂" loading="lazy" /><span class="product-cat cat-blue">CRANE</span></div>
+        <div class="product-body">
+          <h3>海沃液压吊臂（HYVA）</h3>
+          <p>各种型号的直臂吊和折臂吊，广泛采用在各类矿山机械和各种拖车，起重能力强，稳定可靠，适应各类工程施工需求。</p>
+          <div class="product-specs"><span class="spec-tag">直臂/折臂</span><span class="spec-tag">多型号</span><span class="spec-tag">HB140-G等</span></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/solar_light.jpg" alt="太阳能灯车" loading="lazy" /><span class="product-cat cat-blue">LIGHTING</span></div>
+        <div class="product-body">
+          <h3>太阳能监控灯车</h3>
+          <p>配备2块435W太阳能板，集高清监控与实时监测功能于一体。LED灯可安装在桅杆顶部用于夜间照明，适合建筑工地、施工现场监控和照明。</p>
+          <div class="product-specs"><span class="spec-tag">435W太阳能板×2</span><span class="spec-tag">高清监控</span><span class="spec-tag">夜间照明</span></div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- TAB 2: 山地施工装备 -->
+  <!-- 山地施工装备 -->
   <div class="tab-content" id="tab2">
     <div class="products-grid">
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/yg_transport.jpg" alt="YG系列履带运管机" loading="lazy" />
-          <span class="product-cat cat-green">TRANSPORT</span>
-        </div>
+        <div class="product-img"><img src="images/dgy_crane.jpg" alt="YG系列履带运管机" loading="lazy" /><span class="product-cat cat-green">TRANSPORT</span></div>
         <div class="product-body">
           <h3>YG系列履带运管机</h3>
-          <p>派浦澜推出的山地型管道施工设备，具有吊取功能、运输钢管和可选助推功能。能够适应山地等复杂施工环境，无线遥控操作半径可达100m。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-green">YG56Y</span>
-            <span class="spec-tag spec-tag-green">最大运管 25t</span>
-            <span class="spec-tag spec-tag-green">最大管径 1422mm</span>
-          </div>
+          <p>派浦澜推出的山地型管道施工设备，具有吊取、运输钢管和助推功能，能适应山地等复杂施工环境，无线遥控操作半径可达100m。</p>
+          <div class="product-specs"><span class="spec-tag spec-green">YG56Y</span><span class="spec-tag spec-green">最大运管25t</span><span class="spec-tag spec-green">管径≤1422mm</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/mountain_crane.jpg" alt="山地吊管机" loading="lazy" />
-          <span class="product-cat cat-green">MOUNTAIN</span>
-        </div>
+        <div class="product-img"><img src="images/hy_welding.jpg" alt="山地吊管机" loading="lazy" /><span class="product-cat cat-green">MOUNTAIN</span></div>
         <div class="product-body">
           <h3>山地吊管机</h3>
-          <p>专为山地复杂地形设计的管道起重设备，底盘接地比压低，爬坡能力强，适用于坡度较大的山地管道铺设施工场景。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-green">山地专用底盘</span>
-            <span class="spec-tag spec-tag-green">强爬坡能力</span>
-            <span class="spec-tag spec-tag-green">遥控操作</span>
-          </div>
+          <p>专为山地复杂地形设计，底盘接地比压低，爬坡能力强，适用于坡度较大的山地管道铺设施工场景，遥控操作提高安全性。</p>
+          <div class="product-specs"><span class="spec-tag spec-green">山地专用底盘</span><span class="spec-tag spec-green">强爬坡能力</span><span class="spec-tag spec-green">遥控操作</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/hy_welding.jpg" alt="山地焊接工作站" loading="lazy" />
-          <span class="product-cat cat-green">WELDING</span>
-        </div>
+        <div class="product-img"><img src="images/mid_heating.jpg" alt="山地焊接工作站" loading="lazy" /><span class="product-cat cat-green">WELDING</span></div>
         <div class="product-body">
           <h3>山地焊接工作站</h3>
-          <p>针对山地施工环境优化设计的焊接工作站，紧凑轻量化设计，适应狭窄山地施工空间，保证焊接质量与施工效率。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-green">山地专用</span>
-            <span class="spec-tag spec-tag-green">紧凑设计</span>
-            <span class="spec-tag spec-tag-green">高效焊接</span>
-          </div>
+          <p>针对山地施工环境优化设计，紧凑轻量化，适应狭窄山地施工空间，保证焊接质量与施工效率。</p>
+          <div class="product-specs"><span class="spec-tag spec-green">山地专用</span><span class="spec-tag spec-green">紧凑设计</span><span class="spec-tag spec-green">高效焊接</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/坡口机.jpg" alt="山地密闭喷砂除锈工作站" loading="lazy" />
-          <span class="product-cat cat-green">RUST REMOVAL</span>
-        </div>
+        <div class="product-img"><img src="images/inner_aligner.jpg" alt="柔性内对口器" loading="lazy" /><span class="product-cat cat-green">ALIGNMENT</span></div>
         <div class="product-body">
-          <h3>山地密闭/开放式喷砂除锈工作站</h3>
-          <p>专为山地施工优化的喷砂除锈设备，适应山地复杂地形，提供密闭式和开放式两种规格，满足不同施工工况需求。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-green">密闭/开放两用</span>
-            <span class="spec-tag spec-tag-green">山地底盘</span>
-            <span class="spec-tag spec-tag-green">Sa2.5级</span>
-          </div>
+          <h3>柔性内对口器</h3>
+          <p>适用于山地复杂地形的管道内对口工具，柔性设计适应管道变形，保障山地施工对口精度，提高焊接一次合格率。</p>
+          <div class="product-specs"><span class="spec-tag spec-green">柔性设计</span><span class="spec-tag spec-green">山地专用</span><span class="spec-tag spec-green">多规格</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/tunnel_inner.jpg" alt="隧道施工专用设备" loading="lazy" />
-          <span class="product-cat cat-green">TUNNEL</span>
-        </div>
+        <div class="product-img"><img src="images/tunnel_inner.jpg" alt="隧道施工专用设备" loading="lazy" /><span class="product-cat cat-green">TUNNEL</span></div>
         <div class="product-body">
           <h3>隧道施工专用设备</h3>
-          <p>包括根焊焊接工作站（HD160G）和外焊焊接工作站（HD160R），配备电源接口，通过动力电驱马达驱动，电驱自行走，适应隧道内无外接电源施工场景。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-green">HD160G 根焊站</span>
-            <span class="spec-tag spec-tag-green">HD160R 外焊站</span>
-            <span class="spec-tag spec-tag-green">电驱自行走</span>
-          </div>
+          <p>包括根焊焊接工作站（HD160G）和外焊焊接工作站（HD160R），电驱自行走，可选电池管理系统实现无外接电源情况下电驱自行走。</p>
+          <div class="product-specs"><span class="spec-tag spec-green">HD160G根焊</span><span class="spec-tag spec-green">HD160R外焊</span><span class="spec-tag spec-green">电驱自行走</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/pipe_corrector.jpg" alt="柔性内对口器抓管器" loading="lazy" />
-          <span class="product-cat cat-green">TOOLS</span>
-        </div>
+        <div class="product-img"><img src="images/py_sandblast.jpg" alt="山地喷砂除锈工作站" loading="lazy" /><span class="product-cat cat-green">RUST REMOVAL</span></div>
         <div class="product-body">
-          <h3>柔性内对口器 / 抓管器</h3>
-          <p>适用于山地复杂地形的管道对口与夹持工具，柔性内对口器适应管道变形，抓管器提供可靠管道夹持，保障山地施工安全高效。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-green">山地专用</span>
-            <span class="spec-tag spec-tag-green">多规格</span>
-            <span class="spec-tag spec-tag-green">液压驱动</span>
-          </div>
+          <h3>山地密闭/开放式喷砂除锈工作站</h3>
+          <p>专为山地施工优化的喷砂除锈设备，提供密闭式和开放式两种规格，满足不同山地施工工况需求，适应复杂地形。</p>
+          <div class="product-specs"><span class="spec-tag spec-green">密闭/开放两用</span><span class="spec-tag spec-green">山地底盘</span><span class="spec-tag spec-green">Sa2.5级</span></div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- TAB 3: 维抢修装备 -->
+  <!-- 维抢修装备 -->
   <div class="tab-content" id="tab3">
     <div class="products-grid">
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/rdy_heater.jpg" alt="RDY系列中频加热器" loading="lazy" />
-          <span class="product-cat cat-orange">HEATING</span>
-        </div>
+        <div class="product-img"><img src="images/rdy_heater.jpg" alt="RDY系列中频加热器" loading="lazy" /><span class="product-cat cat-orange">HEATING</span></div>
         <div class="product-body">
           <h3>RDY系列中频加热器</h3>
-          <p>管道建设常用管口预热设备，主要应用于焊前预热、层间保温、防腐初火、场站装配、组抢焊、焊后热处理等，加热效率95%，功率因数0.85。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-orange">RDY120/160/200</span>
-            <span class="spec-tag spec-tag-orange">功率 120~200kW</span>
-            <span class="spec-tag spec-tag-orange">加热效率 95%</span>
-          </div>
+          <p>管道建设常用管口预热设备，应用于焊前预热、层间保温、防腐初火、组抢焊、焊后热处理等。加热效率95%，功率因数0.85。</p>
+          <div class="product-specs"><span class="spec-tag spec-orange">RDY120/160/200</span><span class="spec-tag spec-orange">功率120~200kW</span><span class="spec-tag spec-orange">效率95%</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/split_beveling.jpg" alt="分瓣式切管坡口机" loading="lazy" />
-          <span class="product-cat cat-orange">BEVELING</span>
-        </div>
+        <div class="product-img"><img src="images/large_beveling.jpg" alt="分瓣式切管坡口机" loading="lazy" /><span class="product-cat cat-orange">BEVELING</span></div>
         <div class="product-body">
           <h3>分瓣式切管坡口机</h3>
-          <p>可对各种规格管道、容器、法兰进行单切断或单坡口加工，也可同时完成切断坡口加工，还可进行复合型坡口及法兰两加工，广泛应用于石油、化工、天然气等行业管线安装和维修。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-orange">Φ20~1240mm</span>
-            <span class="spec-tag spec-tag-orange">电动/气动/液压</span>
-            <span class="spec-tag spec-tag-orange">复合型坡口</span>
-          </div>
+          <p>可对各种规格管道进行单切断或坡口加工，机体为对开式圆环结构，可安装在管线的任何位置，广泛应用于石油、化工、天然气行业管线安装及维修。</p>
+          <div class="product-specs"><span class="spec-tag spec-orange">Φ20~1240mm</span><span class="spec-tag spec-orange">电动/气动/液压</span><span class="spec-tag spec-orange">复合型坡口</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/demagnetize.jpg" alt="加热消磁一体机" loading="lazy" />
-          <span class="product-cat cat-orange">DEMAGNETIZE</span>
+        <div class="product-img"><img src="images/demagnetizer.jpg" alt="CDM型管道消磁机" loading="lazy" /><span class="product-cat cat-orange">DEMAGNETIZE</span></div>
+        <div class="product-body">
+          <h3>CDM型管道消磁机</h3>
+          <p>针对带磁钢管进行消磁设计的高性能智能消磁设备。解决焊接时电弧引燃困难、电弧偏离、液体金属溅出等磁偏吹问题，整机元器件性能卓越，消磁效果极佳。</p>
+          <div class="product-specs"><span class="spec-tag spec-orange">智能消磁</span><span class="spec-tag spec-orange">稳定耐用</span><span class="spec-tag spec-orange">效果极佳</span></div>
         </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img"><img src="images/mid_heating.jpg" alt="加热消磁一体机" loading="lazy" /><span class="product-cat cat-orange">COMBO</span></div>
         <div class="product-body">
           <h3>加热消磁一体机</h3>
-          <p>针对长输管道建设和维修开发的集感应加热和消磁的新型设备，一机多用，具有中频加热的同时，还具备管道消磁功能，方便用于长输管道维修预热、管线连头、管线维修焊接等作业。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-orange">RDX-1000~80-1500</span>
-            <span class="spec-tag spec-tag-orange">功率 20~110kW</span>
-            <span class="spec-tag spec-tag-orange">适用 Φ1500mm</span>
-          </div>
+          <p>集感应加热和消磁功能于一体，一机多用。用于长输管道维修预热、管线连头、管线维修焊接等作业，适用管径Φ1500mm。</p>
+          <div class="product-specs"><span class="spec-tag spec-orange">RDX系列</span><span class="spec-tag spec-orange">功率20~110kW</span><span class="spec-tag spec-orange">Φ1500mm</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/pipe_corrector.jpg" alt="管口校正器" loading="lazy" />
-          <span class="product-cat cat-orange">CORRECTION</span>
-        </div>
+        <div class="product-img"><img src="images/ky_beveling.jpg" alt="管口校正器" loading="lazy" /><span class="product-cat cat-orange">CORRECTION</span></div>
         <div class="product-body">
           <h3>管口校正器</h3>
-          <p>应用于管线钢管管口椭圆校正的设备，采用进口控制元件，西门子和继纶触摸屏为控制系统，以电机和液压电磁阀为驱动系统，定位精度高，校正效果好。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-orange">GZ32°-40° / 48°-56°</span>
-            <span class="spec-tag spec-tag-orange">最大校正力 200t</span>
-            <span class="spec-tag spec-tag-orange">壁厚 8-35mm</span>
-          </div>
+          <p>应用于管线钢管管口椭圆校正，西门子触摸屏控制，液压电磁阀驱动，定位精度高，校正效果好。最大校正力200t，适用壁厚8-35mm。</p>
+          <div class="product-specs"><span class="spec-tag spec-orange">GZ32°-56°</span><span class="spec-tag spec-orange">最大校正力200t</span><span class="spec-tag spec-orange">壁厚8-35mm</span></div>
         </div>
       </div>
 
       <div class="product-card">
-        <div class="product-img">
-          <img src="images/rdy_heater.jpg" alt="防腐层剥离机" loading="lazy" />
-          <span class="product-cat cat-orange">COATING</span>
-        </div>
-        <div class="product-body">
-          <h3>防腐层剥离机</h3>
-          <p>专用于管道维抢修作业中防腐层的快速剥离，操作简便，剥离效率高，适用于各类防腐涂层材料，为后续焊接修复提供洁净基面。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-orange">多管径适用</span>
-            <span class="spec-tag spec-tag-orange">高效剥离</span>
-            <span class="spec-tag spec-tag-orange">维抢修专用</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-img">
-          <img src="images/yg_transport.jpg" alt="履带抢修车" loading="lazy" />
-          <span class="product-cat cat-orange">EMERGENCY</span>
-        </div>
+        <div class="product-img"><img src="images/dgy_crane.jpg" alt="履带抢修车" loading="lazy" /><span class="product-cat cat-orange">EMERGENCY</span></div>
         <div class="product-body">
           <h3>履带抢修车</h3>
-          <p>专业管道应急维抢修装备，履带底盘适应各种地形，可快速到达管道泄漏现场，配备完整的焊接修复工具，保障能源管线快速恢复运行。</p>
-          <div class="product-specs">
-            <span class="spec-tag spec-tag-orange">履带全地形</span>
-            <span class="spec-tag spec-tag-orange">快速响应</span>
-            <span class="spec-tag spec-tag-orange">应急专用</span>
-          </div>
+          <p>专业管道应急维抢修装备，履带底盘适应各种地形，可快速到达管道泄漏现场，配备完整焊接修复工具，保障能源管线快速恢复运行。</p>
+          <div class="product-specs"><span class="spec-tag spec-orange">全地形履带</span><span class="spec-tag spec-orange">快速响应</span><span class="spec-tag spec-orange">应急专用</span></div>
         </div>
       </div>
 
@@ -635,7 +530,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
     <span class="section-tag">PROJECT CASES</span>
@@ -645,40 +539,15 @@
     <p class="section-desc">服务于国内外大型管道工程，积累丰富的现场施工经验与解决方案。</p>
   </div>
   <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-num">01</div>
-      <h3>国家管网长输管线铺设项目</h3>
-      <p>为国家管网公司提供DGY系列吊管机及全套管道施工装备，覆盖数百公里长输管线施工，显著缩短工期，焊接质量达标。</p>
-    </div>
-    <div class="project-card">
-      <div class="project-num">02</div>
-      <h3>中石化城市输气管网改造</h3>
-      <p>采用KY系列坡口机与HY系列全液压焊接工作站，完成城市输气管道改造施工，焊接一次合格率达99%以上。</p>
-    </div>
-    <div class="project-card">
-      <div class="project-num">03</div>
-      <h3>山地管道施工项目</h3>
-      <p>提供YG系列履带运管机、山地吊管机等山地施工专用装备，解决复杂地形下的管道铺设难题，成功完成高原山地长输管线施工任务。</p>
-    </div>
-    <div class="project-card">
-      <div class="project-num">04</div>
-      <h3>中东地区天然气管道项目</h3>
-      <p>向中东地区出口管道施工装备，设备在高温沙漠极端工况下稳定运行，满足−20℃~+50℃宽温域要求，获客户高度评价。</p>
-    </div>
-    <div class="project-card">
-      <div class="project-num">05</div>
-      <h3>中石油管道防腐工程</h3>
-      <p>整合PY系列喷砂除锈工作站、HWZ红外线加热工作站，实现一体化防腐施工方案，达到Sa2.5~3级除锈防腐标准。</p>
-    </div>
-    <div class="project-card">
-      <div class="project-num">06</div>
-      <h3>管道维抢修应急服务</h3>
-      <p>为中海油、中国铁建等提供加热消磁一体机、分瓣式坡口机等专业维抢修设备及现场技术支持，快速响应管道泄漏事故。</p>
-    </div>
+    <div class="project-card"><div class="project-num">01</div><h3>国家管网长输管线铺设项目</h3><p>为国家管网公司提供DGY系列吊管机及全套管道施工装备，覆盖数百公里长输管线施工，显著缩短工期，焊接质量达标。</p></div>
+    <div class="project-card"><div class="project-num">02</div><h3>中石化城市输气管网改造</h3><p>采用KY系列坡口机与HY系列全液压焊接工作站，完成城市输气管道改造施工，焊接一次合格率达99%以上。</p></div>
+    <div class="project-card"><div class="project-num">03</div><h3>山地管道施工项目</h3><p>提供YG系列履带运管机、山地吊管机等山地施工专用装备，解决复杂地形管道铺设难题，成功完成高原山地长输管线施工任务。</p></div>
+    <div class="project-card"><div class="project-num">04</div><h3>中东地区天然气管道项目</h3><p>向中东地区出口管道施工装备，设备在高温沙漠极端工况下稳定运行，满足−20℃~+50℃宽温域要求，获客户高度评价。</p></div>
+    <div class="project-card"><div class="project-num">05</div><h3>中石油管道防腐工程</h3><p>整合PY系列喷砂除锈工作站、HWZ红外线加热工作站，实现一体化防腐施工方案，达到Sa2.5~3级除锈防腐标准。</p></div>
+    <div class="project-card"><div class="project-num">06</div><h3>管道维抢修应急服务</h3><p>为中海油、中国铁建等提供加热消磁一体机、分瓣式坡口机等专业维抢修设备及现场技术支持，快速响应管道泄漏事故。</p></div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="section-header">
     <span class="section-tag">SERVICE & SUPPORT</span>
@@ -687,30 +556,13 @@
     <div class="divider"></div>
   </div>
   <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">🔧</div>
-      <h3>售前方案定制</h3>
-      <p>根据项目工况、地理条件、管径规格提供设备选型建议与施工方案设计，确保设备与工程高度匹配。</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🚛</div>
-      <h3>设备租赁与运输</h3>
-      <p>提供灵活的设备租赁模式，覆盖全国运输与现场调试支持，降低客户采购成本，快速响应项目需求。</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">👷</div>
-      <h3>现场技术支持</h3>
-      <p>专业工程师团队提供设备安装调试、操作培训、日常维护指导与施工全程技术跟踪，保障项目顺利实施。</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔍</div>
-      <h3>管道检测服务</h3>
-      <p>具备防腐蚀检测资质，采用国内外先进检测仪器，对每步工序和总体施工质量进行科学定性与定量检测。</p>
-    </div>
+    <div class="service-card"><div class="service-icon">🔧</div><h3>售前方案定制</h3><p>根据项目工况、地理条件、管径规格提供设备选型建议与施工方案设计，确保设备与工程高度匹配。</p></div>
+    <div class="service-card"><div class="service-icon">🚛</div><h3>设备租赁与运输</h3><p>提供灵活的设备租赁模式，覆盖全国运输与现场调试支持，降低客户采购成本，快速响应项目需求。</p></div>
+    <div class="service-card"><div class="service-icon">👷</div><h3>现场技术支持</h3><p>专业工程师团队提供设备安装调试、操作培训、日常维护指导与施工全程技术跟踪，保障项目顺利实施。</p></div>
+    <div class="service-card"><div class="service-icon">🔍</div><h3>管道检测服务</h3><p>具备防腐蚀检测资质，采用国内外先进检测仪器，对每步工序和总体施工质量进行科学定性与定量检测。</p></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
     <span class="section-tag">GET IN TOUCH</span>
@@ -721,115 +573,77 @@
   <div class="contact-grid">
     <div class="contact-info">
       <h3>随时与我们联系</h3>
-      <div class="contact-item">
-        <div class="contact-icon">👤</div>
-        <div class="contact-detail">
-          <strong>联系人</strong>
-          <span>安国英</span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div class="contact-detail">
-          <strong>手机 / 电话</strong>
-          <span><a href="tel:18131673590">18131673590</a> / <a href="tel:02229477939">022-29477939</a></span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div class="contact-detail">
-          <strong>邮箱</strong>
-          <span><a href="mailto:yingxiao706@gmail.com">yingxiao706@gmail.com</a></span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">✉️</div>
-        <div class="contact-detail">
-          <strong>企业邮箱</strong>
-          <span><a href="mailto:tjpplen@163.com">tjpplen@163.com</a></span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🏭</div>
-        <div class="contact-detail">
-          <strong>公司地址</strong>
-          <span>天津市武清区京滨工业园古兴路8号</span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🌐</div>
-        <div class="contact-detail">
-          <strong>官网</strong>
-          <span><a href="https://www.pipelinen.com" target="_blank">www.pipelinen.com</a></span>
-        </div>
-      </div>
+      <div class="contact-item"><div class="contact-icon">👤</div><div class="contact-detail"><strong>联系人</strong><span>安国英</span></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-detail"><strong>手机 / 电话</strong><span><a href="tel:18131673590">18131673590</a> / <a href="tel:02229477939">022-29477939</a></span></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><strong>邮箱</strong><span><a href="mailto:yingxiao706@gmail.com">yingxiao706@gmail.com</a></span></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><strong>企业邮箱</strong><span><a href="mailto:tjpplen@163.com">tjpplen@163.com</a></span></div></div>
+      <div class="contact-item"><div class="contact-icon">🏭</div><div class="contact-detail"><strong>公司地址</strong><span>天津市武清区京滨工业园古兴路8号</span></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div class="contact-detail"><strong>官网</strong><span><a href="https://www.pipelinen.com" target="_blank">www.pipelinen.com</a></span></div></div>
       <a class="whatsapp-btn" href="https://wa.me/0971588589236" target="_blank">💬 WhatsApp 咨询</a>
     </div>
     <div class="contact-form">
       <h3>发送咨询</h3>
+      <div class="form-group"><label>姓名 *</label><input type="text" placeholder="您的姓名" /></div>
+      <div class="form-group"><label>联系方式 *</label><input type="text" placeholder="手机号或邮箱" /></div>
       <div class="form-group">
-        <label>姓名 *</label>
-        <input type="text" placeholder="您的姓名" />
-      </div>
-      <div class="form-group">
-        <label>联系方式 *</label>
-        <input type="text" placeholder="手机号或邮箱" />
-      </div>
-      <div class="form-group">
-        <label>感兴趣的产品系列</label>
+        <label>感兴趣的产品</label>
         <select>
           <option value="">请选择产品系列</option>
           <optgroup label="管道施工装备">
             <option>DGY系列吊管机</option>
             <option>HY系列全液压焊接工作站</option>
+            <option>HL系列轮式焊接工作站</option>
             <option>KY系列坡口机</option>
-            <option>中频加热器/加热工作站</option>
-            <option>PY系列密闭式喷砂除锈工作站</option>
+            <option>大口径管口坡口机</option>
+            <option>RDZ系列中频加热工作站</option>
             <option>HWZ系列红外线加热工作站</option>
-            <option>外对口器/气动内对口器</option>
+            <option>PY系列密闭式喷砂除锈工作站</option>
+            <option>DNQ系列气动内对口器</option>
+            <option>DW系列外对口器</option>
+            <option>CB系列垂直液压弯管机</option>
+            <option>IWM内焊机器人</option>
             <option>无线数据采集器</option>
+            <option>防风棚</option>
+            <option>吊篮</option>
+            <option>太阳能监控灯车</option>
           </optgroup>
           <optgroup label="山地施工装备">
             <option>YG系列履带运管机</option>
-            <option>山地吊管机/全回转吊管机</option>
+            <option>山地吊管机</option>
             <option>山地焊接工作站</option>
             <option>隧道施工专用设备</option>
-            <option>柔性内对口器/抓管器</option>
+            <option>柔性内对口器</option>
           </optgroup>
           <optgroup label="维抢修装备">
             <option>RDY系列中频加热器</option>
             <option>分瓣式切管坡口机</option>
+            <option>CDM型管道消磁机</option>
             <option>加热消磁一体机</option>
             <option>管口校正器</option>
             <option>履带抢修车</option>
           </optgroup>
         </select>
       </div>
-      <div class="form-group">
-        <label>项目需求</label>
-        <textarea placeholder="请描述您的项目概况、管径规格、工期要求等，以便我们为您提供更精准的方案..."></textarea>
-      </div>
+      <div class="form-group"><label>项目需求</label><textarea placeholder="请描述您的项目概况、管径规格、工期要求等..."></textarea></div>
       <button class="form-submit" type="button">提交咨询</button>
       <p class="form-note">我们将在1个工作日内与您联系</p>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p><strong>天津派浦澜能源科技有限公司 · PIPELINON</strong></p>
   <p style="margin-top:6px;">缔造精品机械 · 专注管道服务 | 电话：022-29477939 | 地址：天津市武清区京滨工业园古兴路8号</p>
-  <p style="margin-top:6px;">© 2026 PIPELINON All Rights Reserved. | <a href="mailto:tjpplen@163.com" style="color:rgba(255,255,255,0.5);">tjpplen@163.com</a></p>
+  <p style="margin-top:6px;">© 2026 PIPELINON All Rights Reserved. | <a href="mailto:tjpplen@163.com" style="color:rgba(255,255,255,0.4)">tjpplen@163.com</a></p>
 </footer>
 
 <script>
-function showTab(id) {
+function showTab(id, btn) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
+  btn.classList.add('active');
 }
 </script>
-
 </body>
 </html>
