@@ -3,196 +3,490 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pipeline Construction Equipment</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>PIPELINON - Tianjin Pipelinon Energy Technology Co., Ltd. | Pipeline Construction Equipment</title>
+  <meta name="description" content="Tianjin Pipelinon Energy Technology Co., Ltd. specializes in pipeline construction equipment, mountain construction equipment and maintenance equipment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #0057a8; --blue-dark: #003d7a; --blue-light: #1a7fd4;
+      --green: #1a7a3c; --orange: #c8600a;
+      --accent: #e8a020; --text: #1a1a2e; --text-muted: #5a6478;
+      --bg: #f5f7fb; --white: #ffffff; --border: #dde3ee;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; color: var(--text); background: var(--white); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(0,30,70,0.97); backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-text { color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+    .nav-logo-sub { color: rgba(255,255,255,0.55); font-size: 11px; letter-spacing: 3px; display: block; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-lang { color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid var(--accent); padding: 4px 12px; border-radius: 3px; }
+
+    #home {
+      min-height: 100vh; background: linear-gradient(135deg, #001a3d 0%, #003580 50%, #0057a8 100%);
+      display: flex; align-items: center; padding: 80px 5% 60px;
+      position: relative; overflow: hidden;
+    }
+    #home::before { content: ''; position: absolute; inset: 0; background: url('dgy_crane.jpg') center/cover no-repeat; opacity: 0.15; }
+    #home::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(transparent, var(--white)); }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .hero-tag { display: inline-block; background: var(--accent); color: white; font-size: 11px; font-weight: 700; letter-spacing: 3px; padding: 5px 14px; margin-bottom: 24px; }
+    .hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 6vw, 72px); font-weight: 800; color: white; line-height: 1.05; margin-bottom: 12px; }
+    .hero-title-sub { font-size: clamp(16px, 2.5vw, 26px); font-weight: 500; color: rgba(255,255,255,0.85); margin-bottom: 16px; letter-spacing: 1px; }
+    .hero-slogan { font-size: 15px; color: rgba(255,255,255,0.7); letter-spacing: 2px; margin-bottom: 32px; font-style: italic; }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.8; max-width: 560px; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: white; padding: 13px 30px; font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 2px; transition: background 0.2s; }
+    .btn-primary:hover { background: #c8880f; }
+    .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: white; padding: 11px 28px; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 2px; transition: all 0.2s; }
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    .stats-bar { background: var(--blue-dark); padding: 28px 5%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+    .stat { text-align: center; color: white; }
+    .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 40px; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; letter-spacing: 1px; }
+
+    section { padding: 72px 5%; }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 4px; color: var(--blue); text-transform: uppercase; margin-bottom: 10px; display: block; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(26px, 4vw, 44px); font-weight: 800; color: var(--text); margin-bottom: 12px; }
+    .section-desc { color: var(--text-muted); font-size: 14px; line-height: 1.8; max-width: 640px; margin: 14px auto 0; }
+    .divider { width: 48px; height: 4px; background: var(--accent); margin: 14px auto 0; }
+
+    #about { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+    .about-text p { color: var(--text-muted); font-size: 14px; line-height: 1.9; margin-bottom: 14px; }
+    .about-highlight { background: white; border-left: 4px solid var(--blue); padding: 14px 18px; margin: 20px 0; }
+    .about-highlight strong { color: var(--blue); font-size: 14px; }
+    .certs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .cert-badge { background: white; border: 1px solid var(--border); padding: 5px 12px; font-size: 11px; color: var(--blue); font-weight: 600; border-radius: 2px; }
+    .field-card { background: white; border-radius: 4px; padding: 18px; margin-bottom: 14px; border-left: 3px solid var(--blue); }
+    .field-card h4 { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 7px; }
+    .field-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+    #products { background: white; }
+    .tab-nav { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 40px; overflow-x: auto; }
+    .tab-btn { padding: 14px 28px; font-size: 14px; font-weight: 700; cursor: pointer; border: none; background: none; color: var(--text-muted); border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: all 0.2s; font-family: inherit; }
+    .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+    .tab-btn:hover { color: var(--blue); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .product-card { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,57,128,0.12); }
+    .product-img { height: 210px; background: white; overflow: hidden; position: relative; }
+    .product-img img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s; }
+    .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-cat { position: absolute; top: 12px; left: 12px; color: white; font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 3px 10px; }
+    .cat-blue { background: var(--blue); }
+    .cat-green { background: var(--green); }
+    .cat-orange { background: var(--orange); }
+    .product-body { padding: 18px; }
+    .product-body h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 7px; }
+    .product-body p { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 12px; }
+    .product-specs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .spec-tag { background: var(--bg); color: var(--blue); font-size: 11px; padding: 3px 9px; border-radius: 2px; font-weight: 600; }
+    .spec-green { background: #e8f5ee; color: var(--green); }
+    .spec-orange { background: #fef0e6; color: var(--orange); }
+
+    #projects { background: var(--blue-dark); }
+    #projects .section-title { color: white; }
+    #projects .section-tag { color: var(--accent); }
+    #projects .section-desc { color: rgba(255,255,255,0.65); }
+    #projects .divider { background: var(--accent); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .project-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 24px; }
+    .project-num { font-family: 'Barlow Condensed', sans-serif; font-size: 44px; font-weight: 800; color: rgba(255,255,255,0.08); line-height: 1; margin-bottom: -8px; }
+    .project-card h3 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .project-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+    #services { background: var(--bg); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .service-card { text-align: center; padding: 32px 20px; border: 1px solid var(--border); border-radius: 4px; background: white; transition: border-color 0.2s, box-shadow 0.2s; }
+    .service-card:hover { border-color: var(--blue); box-shadow: 0 8px 30px rgba(0,57,128,0.1); }
+    .service-icon { font-size: 34px; margin-bottom: 14px; }
+    .service-card h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 9px; }
+    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+    #contact { background: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; max-width: 960px; margin: 0 auto; }
+    .contact-info h3 { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 22px; }
+    .contact-item { display: flex; gap: 12px; margin-bottom: 18px; align-items: flex-start; }
+    .contact-icon { width: 38px; height: 38px; background: var(--blue); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: white; font-size: 16px; flex-shrink: 0; }
+    .contact-detail strong { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 2px; }
+    .contact-detail span { font-size: 14px; color: var(--text); font-weight: 500; }
+    .contact-detail a { color: var(--blue); text-decoration: none; }
+    .whatsapp-btn { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 11px 22px; border-radius: 3px; text-decoration: none; font-weight: 700; font-size: 13px; margin-top: 6px; }
+    .contact-form { background: var(--bg); padding: 28px; border-radius: 4px; border: 1px solid var(--border); }
+    .contact-form h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; border: 1px solid var(--border); border-radius: 3px; padding: 9px 12px; font-size: 13px; font-family: inherit; color: var(--text); background: white; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--blue); }
+    .form-group textarea { height: 90px; resize: vertical; }
+    .form-submit { width: 100%; background: var(--blue); color: white; border: none; padding: 12px; font-size: 14px; font-weight: 700; border-radius: 3px; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .form-submit:hover { background: var(--blue-dark); }
+    .form-note { font-size: 11px; color: var(--text-muted); margin-top: 8px; text-align: center; }
+
+    footer { background: #001229; color: rgba(255,255,255,0.6); padding: 28px 5%; text-align: center; font-size: 12px; }
+    footer strong { color: rgba(255,255,255,0.9); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">Pipeline Construction Equipment</div>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="site-nav">
-      <a href="#home">Home</a>
-      <a href="#equipment">Equipment</a>
-      <a href="#showcase">Product Showcase</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <a class="language-link" href="index.html">中文</a>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-copy">
-        <h1>Professional Pipeline Construction Equipment Solutions</h1>
-        <p>Providing efficient, safe, and reliable mechanical equipment for pipeline laying, welding, corrosion protection, and maintenance.</p>
-        <a class="button" href="#equipment">Learn More</a>
+<nav>
+  <a class="nav-logo" href="#home">
+    <div>
+      <span class="nav-logo-text">PIPELINON</span>
+      <span class="nav-logo-sub">PIPELINE SOLUTIONS</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-lang" href="index.html">中文</a>
+</nav>
+
+<section id="home">
+  <div class="hero-content">
+    <span class="hero-tag">LIVE BY QUALITY AND TRUST</span>
+    <div class="hero-title">PIPELINON</div>
+    <div class="hero-title-sub">Tianjin Pipelinon Energy Technology Co., Ltd.</div>
+    <div class="hero-slogan">Excellence in Pipeline Machinery · Dedicated Pipeline Services</div>
+    <p class="hero-desc">Specializing in the R&D, manufacturing and sales of pipeline construction equipment — covering pipeline construction, mountain terrain construction, and maintenance & repair equipment. Serving major clients including CNPC, Sinopec, CNOOC and China's national pipeline network.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#products">View Products</a>
+      <a class="btn-outline" href="#contact">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Product Series</div></div>
+  <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Equipment Models</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Certifications</div></div>
+  <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Years Experience</div></div>
+  <div class="stat"><div class="stat-num">Global</div><div class="stat-label">Middle East · SE Asia · Russia · Africa</div></div>
+</div>
+
+<section id="about">
+  <div class="section-header">
+    <span class="section-tag">COMPANY PROFILE</span>
+    <div class="section-title">ABOUT US</div>
+    <div class="divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Tianjin Pipelinon Energy Technology Co., Ltd. (PIPELINON) is a comprehensive company dedicated to the design, manufacturing, sales, leasing and technical services of pipeline engineering equipment, located at No. 8 Guxing Road, Jingbin Industrial Park, Wuqing District, Tianjin.</p>
+      <p>Pipelinon's pipeline engineering equipment covers pipeline construction, mountain terrain construction, and pipeline maintenance & repair, making it a professional supplier in the domestic pipeline construction equipment sector with clients across major international pipeline engineering enterprises.</p>
+      <div class="about-highlight">
+        <strong>Major Clients: </strong>National Pipeline Network, CNPC, Sinopec, CNOOC, China Chemical, China Railway Construction Corp. International markets expanded to the Middle East, Southeast Asia, Russia, Central Asia, Africa and beyond.
       </div>
-      <div class="hero-image">
-        <img src="images/mountain_crane.jpg" alt="90 Ton Pipe Lifting Machine" />
+      <div class="certs">
+        <span class="cert-badge">Special Equipment License</span>
+        <span class="cert-badge">High-Tech Enterprise</span>
+        <span class="cert-badge">ISO9001</span>
+        <span class="cert-badge">ISO14001</span>
+        <span class="cert-badge">ISO45001</span>
+        <span class="cert-badge">CE Certified</span>
+        <span class="cert-badge">AAA Credit Rating</span>
+        <span class="cert-badge">Anti-Corrosion Qualification</span>
       </div>
-    </section>
-
-    <section id="equipment" class="section section-equipment">
-      <h2>Core Equipment</h2>
-      <div class="equipment-grid">
-        <article class="equipment-card">
-          <img src="images/dgy_crane.jpg" alt="45 Ton Pipe Lifting Machine" />
-          <h3>45 Ton Pipe Lifting Machine</h3>
-          <p>Provides stable and uniform pipe hoisting and positioning, suitable for bridges and complex work conditions.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/mountain_crane.jpg" alt="90 Ton Pipe Lifting Machine" />
-          <h3>90 Ton Pipe Lifting Machine</h3>
-          <p>High load-bearing capacity and precise control, ideal for large-diameter pipes and hazardous conditions.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/外焊机.jpg" alt="External Welding Machine" />
-          <h3>External Welding Machine</h3>
-          <p>For automatic welding on the outer wall of pipes, improving weld quality and construction efficiency.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/海沃随车吊.jpg" alt="Truck-Mounted Crane" />
-          <h3>Truck-Mounted Crane</h3>
-          <p>Multi-functional truck-mounted crane suitable for material handling and heavy equipment transport at construction sites.</p>
-        </article>
+    </div>
+    <div>
+      <div class="field-card">
+        <h4>◆ Pipeline Construction Equipment</h4>
+        <p>Providing pipe-laying cranes, full hydraulic welding stations, beveling machines, induction heaters, line-up clamps, pipe benders, sandblasting stations, wireless data collectors, wind shelters, pipe cradles and more — 15+ types of specialized pipeline construction equipment.</p>
       </div>
-    </section>
-
-    <section id="showcase" class="section section-showcase">
-      <h2>Product Showcase</h2>
-      <div class="equipment-grid">
-        <article class="equipment-card">
-          <img src="images/坡口机.jpg" alt="Bevel Machine" />
-          <h3>Bevel Machine</h3>
-          <p>Precise bevel cutting, compatible with various pipe diameters, ensuring flat and reliable welding joints.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/wireless_data.jpg" alt="Smart Pipe Lifting System" />
-          <h3>Smart Pipe Lifting System</h3>
-          <p>Customizable pipe lifting control solutions to improve on-site construction efficiency and safety.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/mountain_crane.jpg" alt="Large-Diameter Pipe Lifting Machine" />
-          <h3>Large-Diameter Pipe Lifting Machine</h3>
-          <p>Suitable for large oil and gas pipelines with enhanced stability and mobility.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/外焊机.jpg" alt="Pipeline Welding Machine" />
-          <h3>Pipeline Welding Machine</h3>
-          <p>Automated welding equipment for high-speed on-site welding and high-quality control.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/海沃随车吊.jpg" alt="Truck-Mounted Crane" />
-          <h3>Truck-Mounted Crane</h3>
-          <p>Ideal for mounting to welding workstations and heavy transport vehicles, making on-site handling more flexible.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/demagnetize.jpg" alt="Pipeline Demagnetization Equipment" />
-          <h3>Pipeline Demagnetization Equipment</h3>
-          <p>Used before pipeline inspection and maintenance to improve detection accuracy and construction safety.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/dgy_crane.jpg" alt="Cable Lifting Crane" />
-          <h3>Cable Lifting Crane</h3>
-          <p>Ideal for lifting cables, pipe materials, and equipment on site, reducing manual handling effort.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/hy_welding.jpg" alt="Welding Workstation" />
-          <h3>Welding Workstation</h3>
-          <p>Integrated welding, feeding, and inspection system to improve on-site welding efficiency and quality.</p>
-        </article>
-        <article class="equipment-card">
-          <img src="images/hwz_infrared.jpg" alt="Infrared Inspection Device" />
-          <h3>Infrared Inspection Device</h3>
-          <p>Used for infrared inspection of pipeline welds and corrosion layers to quickly discover hidden defects.</p>
-        </article>
+      <div class="field-card" style="border-left-color:var(--green)">
+        <h4 style="color:var(--green)">◆ Mountain Construction Equipment</h4>
+        <p>Specially developed for complex mountain terrain, including YG series tracked pipe carriers, mountain pipe-laying cranes, full-rotation cranes, mountain excavators, mountain welding stations, flexible internal line-up clamps, pipe grippers, and tunnel construction equipment.</p>
       </div>
-    </section>
-
-    <section id="projects" class="section section-projects">
-      <h2>Project Cases</h2>
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Long-Distance Pipeline Laying</h3>
-          <p>Using modular laying equipment to cover hundreds of kilometers of pipeline construction, significantly shortening project timelines.</p>
-        </article>
-        <article class="project-card">
-          <h3>Urban Water Network Renovation</h3>
-          <p>Using high-precision welding equipment and corrosion protection processes to ensure safe and stable urban water projects.</p>
-        </article>
-        <article class="project-card">
-          <h3>Oil Pipeline Corrosion Protection</h3>
-          <p>Integrating spraying, drying, and inspection equipment to achieve comprehensive corrosion protection solutions.</p>
-        </article>
+      <div class="field-card" style="border-left-color:var(--orange)">
+        <h4 style="color:var(--orange)">◆ Maintenance & Repair Equipment</h4>
+        <p>Providing induction heaters, split-type pipe beveling machines, heating & demagnetizing all-in-one units, pipe end correctors, coating strippers, tracked emergency repair vehicles and more, along with maintenance engineering technical services.</p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="about" class="section section-about">
-      <div class="section-content">
-        <h2>About Us</h2>
-        <p>We specialize in the research and supply of pipeline construction equipment, serving oil and gas, water conservancy, and urban pipeline projects.</p>
-        <ul>
-          <li>Stable equipment performance, adapting to complex work conditions</li>
-          <li>Improving on-site construction safety and efficiency</li>
-          <li>Providing professional pre-sales solutions and after-sales support</li>
-        </ul>
+<section id="products">
+  <div class="section-header">
+    <span class="section-tag">PRODUCT CENTER</span>
+    <div class="section-title">OUR PRODUCTS</div>
+    <div class="divider"></div>
+    <p class="section-desc">Three major product series with 30+ equipment models, comprehensively covering all pipeline construction requirements.</p>
+  </div>
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('tab1',this)">🔵 Pipeline Construction</button>
+    <button class="tab-btn" onclick="showTab('tab2',this)">🟢 Mountain Construction</button>
+    <button class="tab-btn" onclick="showTab('tab3',this)">🟠 Maintenance & Repair</button>
+  </div>
+
+  <div class="tab-content active" id="tab1">
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img"><img src="dgy_crane.jpg" alt="DGY Series Pipe-Laying Crane" loading="lazy" /><span class="product-cat cat-blue">PIPE LAYING</span></div>
+        <div class="product-body"><h3>DGY Series Pipe-Laying Crane</h3><p>Used for pipe distribution, assembly and pipe lowering during pipeline construction. Equipped with a Shantui pipe-laying crane dedicated chassis with hydraulic pilot control for easy operation.</p><div class="product-specs"><span class="spec-tag">DGY90/70/45/25</span><span class="spec-tag">Max. Lift 90t</span><span class="spec-tag">Altitude ≤3600m</span></div></div>
       </div>
-    </section>
-
-    <section id="services" class="section section-services">
-      <h2>Services & Support</h2>
-      <div class="service-grid">
-        <article class="project-card">
-          <h3>Pre-Sales Solution Customization</h3>
-          <p>Providing equipment selection, construction plans, and technical optimization recommendations based on project conditions.</p>
-        </article>
-        <article class="project-card">
-          <h3>Equipment Rental & Transportation</h3>
-          <p>Flexible equipment rental models covering nationwide transportation and on-site debugging support.</p>
-        </article>
-        <article class="project-card">
-          <h3>On-Site Technical Support</h3>
-          <p>Professional team provides installation, training, maintenance, and construction guidance to ensure smooth project implementation.</p>
-        </article>
+      <div class="product-card">
+        <div class="product-img"><img src="hy_welding.jpg" alt="HY Series Full Hydraulic Welding Station" loading="lazy" /><span class="product-cat cat-blue">WELDING</span></div>
+        <div class="product-body"><h3>HY Series Full Hydraulic Welding Station</h3><p>Integrates travel, power generation, welding and crane functions in one tracked full-hydraulic welding platform. Designed for long-distance pipeline field operations. Stable performance from −20°C to +50°C.</p><div class="product-specs"><span class="spec-tag">HY160/HY180</span><span class="spec-tag">177kW Generator</span><span class="spec-tag">360° Crane</span></div></div>
       </div>
-    </section>
-
-    <section id="contact" class="section section-contact">
-      <h2>Contact Us</h2>
-      <p>Ready to start your project? Leave a message or contact our project manager directly.</p>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div><strong>Contact Person:</strong> An Guoying</div>
-          <div><strong>Phone:</strong> <a href="tel:+8618131673590">+86 18131673590</a></div>
-          <div><strong>WhatsApp:</strong> <a href="https://wa.me/971588589236">0971588589236</a></div>
-          <div><strong>Email:</strong> <a href="mailto:yingxiao706@gmail.com">yingxiao706@gmail.com</a></div>
-        </div>
-        <form id="contact-form" class="contact-form" data-lang="en" data-email="yingxiao706@gmail.com">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Please enter your name" required />
-          </label>
-          <label>
-            Phone / Email
-            <input type="text" name="contact" placeholder="Please enter your phone or email" required />
-          </label>
-          <label>
-            Project Requirements
-            <textarea name="message" rows="5" placeholder="Please briefly describe your requirements" required></textarea>
-          </label>
-          <button type="submit" class="button">Submit Inquiry</button>
-          <p class="form-note">We will contact you within 1 business day.</p>
-        </form>
+      <div class="product-card">
+        <div class="product-img"><img src="wheel_welding.jpg" alt="HL Series Wheeled Welding Station" loading="lazy" /><span class="product-cat cat-blue">WELDING</span></div>
+        <div class="product-body"><h3>HL Series Wheeled Welding Station</h3><p>Uses an Dongfanghong wheeled tractor as the carrier. High travel speed, strong trafficability, easy relocation. Provides mobile power for pipeline welding with an oversized mounting platform.</p><div class="product-specs"><span class="spec-tag">Wheeled Chassis</span><span class="spec-tag">Highly Mobile</span><span class="spec-tag">Large Platform</span></div></div>
       </div>
-    </section>
-  </main>
+      <div class="product-card">
+        <div class="product-img"><img src="ky_beveling.jpg" alt="KY Series Beveling Machine" loading="lazy" /><span class="product-cat cat-blue">BEVELING</span></div>
+        <div class="product-body"><h3>KY Series Beveling Machine</h3><p>Mobile pipe end beveling machine for pipeline construction. Capable of machining X, U, V and various bevel types. Compatible with manual, semi-automatic and fully automatic welding processes.</p><div class="product-specs"><span class="spec-tag">8"—64" Pipe</span><span class="spec-tag">KY0814~KY5664</span><span class="spec-tag">Hydraulic Drive</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="large_beveling.jpg" alt="Large Diameter Beveling Machine" loading="lazy" /><span class="product-cat cat-blue">BEVELING</span></div>
+        <div class="product-body"><h3>Large Diameter Beveling Machine (1219mm)</h3><p>Designed specifically for 48-inch (1219mm) large diameter steel pipes. Quickly completes high-quality V, U and compound bevel machining on-site. Adjustable bevel angles (30°/37.5°/45°).</p><div class="product-specs"><span class="spec-tag">Φ1219mm</span><span class="spec-tag">Auto Feed</span><span class="spec-tag">Adjustable Angle</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="mid_heating.jpg" alt="RDZ Series Induction Heating Station" loading="lazy" /><span class="product-cat cat-blue">HEATING</span></div>
+        <div class="product-body"><h3>RDZ Series Induction Heating Station</h3><p>Used for pre-weld preheating and post-weld heat treatment. Effectively controls welding quality and prevents cold cracking. Self-propelled tracked unit with wireless temperature monitoring.</p><div class="product-specs"><span class="spec-tag">Self-Propelled</span><span class="spec-tag">Wireless Temp.</span><span class="spec-tag">Precise Control</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="hwz_infrared.jpg" alt="HWZ Series Infrared Heating Station" loading="lazy" /><span class="product-cat cat-blue">HEATING</span></div>
+        <div class="product-body"><h3>HWZ Series Infrared Heating Station</h3><p>Mobile pipe joint repair equipment using flameless infrared heating. Mainly used for automatic shrinkage of heat-shrink sleeves in anti-corrosion joint repair operations. 120kW heating power, 15m working radius.</p><div class="product-specs"><span class="spec-tag">HWZ120</span><span class="spec-tag">120kW Power</span><span class="spec-tag">15m Radius</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="py_sandblast.jpg" alt="PY Series Enclosed Sandblasting Station" loading="lazy" /><span class="product-cat cat-blue">RUST REMOVAL</span></div>
+        <div class="product-body"><h3>PY Series Enclosed Sandblasting Station</h3><p>Mobile pipe end sandblasting equipment with 360° dead-angle-free automatic enclosed sandblasting. Stable quality, high efficiency and low cost. Recovery rate greater than 99%.</p><div class="product-specs"><span class="spec-tag">PY180/PY220</span><span class="spec-tag">Sa2.5~3 Grade</span><span class="spec-tag">Recovery >99%</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="inner_aligner.jpg" alt="DNQ Series Pneumatic Internal Line-Up Clamp" loading="lazy" /><span class="product-cat cat-blue">ALIGNMENT</span></div>
+        <div class="product-body"><h3>DNQ Series Pneumatic Internal Line-Up Clamp</h3><p>Used for internal pipe end alignment before welding. Ensures pipe concentricity and improves welding quality and efficiency. Multiple sizes available for different pipe diameters.</p><div class="product-specs"><span class="spec-tag">Pneumatic Drive</span><span class="spec-tag">Multi-Size</span><span class="spec-tag">High Precision</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="outer_aligner.jpg" alt="DW Series External Line-Up Clamp" loading="lazy" /><span class="product-cat cat-blue">ALIGNMENT</span></div>
+        <div class="product-body"><h3>DW Series External Line-Up Clamp</h3><p>External pipe end alignment equipment for pre-weld positioning. Lightweight, reliable clamping, suitable for pipe alignment operations across various pipe diameters.</p><div class="product-specs"><span class="spec-tag">External Clamp</span><span class="spec-tag">Multi-Size</span><span class="spec-tag">Reliable</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="pipe_bender.jpg" alt="CB Series Vertical Hydraulic Pipe Bender" loading="lazy" /><span class="product-cat cat-blue">BENDING</span></div>
+        <div class="product-body"><h3>CB Series Vertical Hydraulic Pipe Bender</h3><p>For field bending of pipeline elbows at various angles during pipe laying. Reduces weld joints and improves construction efficiency. Hydraulically driven with high bending accuracy.</p><div class="product-specs"><span class="spec-tag">Hydraulic Drive</span><span class="spec-tag">Multi-Angle</span><span class="spec-tag">Field Operation</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="inner_welder.jpg" alt="IWM Internal Welding Robot" loading="lazy" /><span class="product-cat cat-blue">WELDING</span></div>
+        <div class="product-body"><h3>IWM Internal Welding Robot</h3><p>Electro-hydraulic drive technology powered by lithium-ion batteries. Hydraulically driven linear shoes for pipe roundness correction. Fast-response electromagnetic braking system. Significantly reduced size with greatly improved cornering ability.</p><div class="product-specs"><span class="spec-tag">Electro-Hydraulic</span><span class="spec-tag">Li-ion Battery</span><span class="spec-tag">Smart Braking</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="wireless_data.jpg" alt="Wireless Data Collector" loading="lazy" /><span class="product-cat cat-blue">DATA</span></div>
+        <div class="product-body"><h3>Wireless Data Collector GS-NT3.0</h3><p>Scans weld joint, operator and equipment QR codes. Real-time collection of heating temperature, working pressure and other construction data uploaded to the unit computer for digital quality management.</p><div class="product-specs"><span class="spec-tag">Dual-Band WiFi</span><span class="spec-tag">Range ≥1km</span><span class="spec-tag">±1°C Accuracy</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="wind_shelter.jpg" alt="Wind Shelter" loading="lazy" /><span class="product-cat cat-blue">SHELTER</span></div>
+        <div class="product-body"><h3>Wind Shelter</h3><p>New-type wind shelter developed specifically for above-trench pipeline welding. Modular assembly structure with wind, rain and fire protection. Equipped with exhaust fans and supports 220V/380V power connection.</p><div class="product-specs"><span class="spec-tag">FP22/2436/4056</span><span class="spec-tag">Modular</span><span class="spec-tag">Wind & Rain Proof</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="pipe_basket.jpg" alt="Pipe Cradle" loading="lazy" /><span class="product-cat cat-blue">LIFTING</span></div>
+        <div class="product-body"><h3>Pipe Cradle</h3><p>Specialized lifting tool for pipe lowering after welding. Lightweight with strong lifting capacity. Polyurethane rollers protect the pipe coating. Sealed bearings with waterproof and sandproof functions. Easy to disassemble and store.</p><div class="product-specs"><span class="spec-tag">Lightweight</span><span class="spec-tag">Coating Protection</span><span class="spec-tag">Waterproof</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="hyva_crane_arm.jpg" alt="HYVA Hydraulic Crane Arm" loading="lazy" /><span class="product-cat cat-blue">CRANE</span></div>
+        <div class="product-body"><h3>HYVA Hydraulic Crane Arm</h3><p>Various models of straight-arm and knuckle-boom cranes widely used in mining machinery and various trailers. Strong lifting capacity, stable and reliable, suitable for various engineering construction needs.</p><div class="product-specs"><span class="spec-tag">Straight/Knuckle Boom</span><span class="spec-tag">Multi-Model</span><span class="spec-tag">HB140-G etc.</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="solar_light.jpg" alt="Solar Surveillance & Lighting Tower" loading="lazy" /><span class="product-cat cat-blue">LIGHTING</span></div>
+        <div class="product-body"><h3>Solar Surveillance & Lighting Tower</h3><p>Equipped with 2×435W solar panels, integrating HD surveillance and real-time monitoring. LED lights mounted on mast for night-time illumination. Ideal for construction sites and high-value asset protection.</p><div class="product-specs"><span class="spec-tag">435W Panels ×2</span><span class="spec-tag">HD Surveillance</span><span class="spec-tag">Night Lighting</span></div></div>
+      </div>
+    </div>
+  </div>
 
-  <footer class="site-footer">
-    <p>© 2026 Pipeline Construction Equipment, Professional Pipeline Project Support.</p>
-  </footer>
+  <div class="tab-content" id="tab2">
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img"><img src="dgy_crane.jpg" alt="YG Series Tracked Pipe Carrier" loading="lazy" /><span class="product-cat cat-green">TRANSPORT</span></div>
+        <div class="product-body"><h3>YG Series Tracked Pipe Carrier</h3><p>Mountain-type pipeline construction equipment developed by Pipelinon with lifting, pipe transport and optional push-assist functions. Adapts to mountain and complex construction environments. Wireless remote control range up to 100m.</p><div class="product-specs"><span class="spec-tag spec-green">YG56Y</span><span class="spec-tag spec-green">Max. 25t Pipe</span><span class="spec-tag spec-green">Dia. ≤1422mm</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="hy_welding.jpg" alt="Mountain Pipe-Laying Crane" loading="lazy" /><span class="product-cat cat-green">MOUNTAIN</span></div>
+        <div class="product-body"><h3>Mountain Pipe-Laying Crane</h3><p>Designed for complex mountain terrain with low ground pressure, strong climbing ability. Suitable for pipeline laying on steep slopes. Remote control operation enhances safety in difficult terrain.</p><div class="product-specs"><span class="spec-tag spec-green">Mountain Chassis</span><span class="spec-tag spec-green">Strong Climbing</span><span class="spec-tag spec-green">Remote Control</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="mid_heating.jpg" alt="Mountain Welding Station" loading="lazy" /><span class="product-cat cat-green">WELDING</span></div>
+        <div class="product-body"><h3>Mountain Welding Station</h3><p>Optimized design for mountain construction environments. Compact and lightweight to fit narrow mountain work spaces while maintaining welding quality and construction efficiency.</p><div class="product-specs"><span class="spec-tag spec-green">Mountain Spec.</span><span class="spec-tag spec-green">Compact Design</span><span class="spec-tag spec-green">High Efficiency</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="inner_aligner.jpg" alt="Flexible Internal Line-Up Clamp" loading="lazy" /><span class="product-cat cat-green">ALIGNMENT</span></div>
+        <div class="product-body"><h3>Flexible Internal Line-Up Clamp</h3><p>Internal pipe alignment tool for complex mountain terrain. Flexible design adapts to pipe deformation, ensuring alignment precision in mountain construction and improving first-pass weld acceptance rate.</p><div class="product-specs"><span class="spec-tag spec-green">Flexible Design</span><span class="spec-tag spec-green">Mountain Spec.</span><span class="spec-tag spec-green">Multi-Size</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="tunnel_inner.jpg" alt="Tunnel Construction Equipment" loading="lazy" /><span class="product-cat cat-green">TUNNEL</span></div>
+        <div class="product-body"><h3>Tunnel Construction Equipment</h3><p>Includes root-pass welding station (HD160G) and external welding station (HD160R). Electric-drive self-propelled units with optional battery management system for operation without external power supply.</p><div class="product-specs"><span class="spec-tag spec-green">HD160G Root Pass</span><span class="spec-tag spec-green">HD160R External</span><span class="spec-tag spec-green">Electric Drive</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="py_sandblast.jpg" alt="Mountain Sandblasting Station" loading="lazy" /><span class="product-cat cat-green">RUST REMOVAL</span></div>
+        <div class="product-body"><h3>Mountain Enclosed/Open Sandblasting Station</h3><p>Sandblasting equipment optimized for mountain construction. Available in enclosed and open configurations to meet different mountain construction requirements, adapting to complex terrain.</p><div class="product-specs"><span class="spec-tag spec-green">Enclosed/Open</span><span class="spec-tag spec-green">Mountain Chassis</span><span class="spec-tag spec-green">Sa2.5 Grade</span></div></div>
+      </div>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
+  <div class="tab-content" id="tab3">
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-img"><img src="rdy_heater.jpg" alt="RDY Series Induction Heater" loading="lazy" /><span class="product-cat cat-orange">HEATING</span></div>
+        <div class="product-body"><h3>RDY Series Induction Heater</h3><p>Common pipe end preheating equipment for pipeline construction. Applied to pre-weld preheating, interpass temperature maintenance, anti-corrosion priming, tack welding and post-weld heat treatment. 95% heating efficiency.</p><div class="product-specs"><span class="spec-tag spec-orange">RDY120/160/200</span><span class="spec-tag spec-orange">120~200kW</span><span class="spec-tag spec-orange">95% Efficiency</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="large_beveling.jpg" alt="Split-Type Pipe Beveling Machine" loading="lazy" /><span class="product-cat cat-orange">BEVELING</span></div>
+        <div class="product-body"><h3>Split-Type Pipe Beveling Machine</h3><p>Capable of single cut-off or beveling of various pipe sizes. Split-type ring structure can be installed at any position on the pipeline. Widely used in oil, chemical and gas industry pipeline installation and repair.</p><div class="product-specs"><span class="spec-tag spec-orange">Φ20~1240mm</span><span class="spec-tag spec-orange">Electric/Pneumatic/Hydraulic</span><span class="spec-tag spec-orange">Compound Bevel</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="demagnetizer.jpg" alt="CDM Pipeline Demagnetizer" loading="lazy" /><span class="product-cat cat-orange">DEMAGNETIZE</span></div>
+        <div class="product-body"><h3>CDM Pipeline Demagnetizer</h3><p>High-performance intelligent demagnetizing equipment designed for magnetized steel pipes. Solves arc blow problems including difficult arc ignition, arc deviation and metal spatter during welding. Outstanding demagnetizing performance.</p><div class="product-specs"><span class="spec-tag spec-orange">Smart Control</span><span class="spec-tag spec-orange">Durable</span><span class="spec-tag spec-orange">Excellent Results</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="mid_heating.jpg" alt="Heating & Demagnetizing All-in-One" loading="lazy" /><span class="product-cat cat-orange">COMBO</span></div>
+        <div class="product-body"><h3>Heating & Demagnetizing All-in-One Unit</h3><p>Integrates induction heating and demagnetizing functions in a single multi-purpose unit. Used for long-distance pipeline maintenance preheating, tie-in connections and repair welding. Applicable to pipes up to Φ1500mm.</p><div class="product-specs"><span class="spec-tag spec-orange">RDX Series</span><span class="spec-tag spec-orange">20~110kW</span><span class="spec-tag spec-orange">Φ1500mm</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="ky_beveling.jpg" alt="Pipe End Corrector" loading="lazy" /><span class="product-cat cat-orange">CORRECTION</span></div>
+        <div class="product-body"><h3>Pipe End Corrector</h3><p>Applied to correct oval deformation of pipeline steel pipe ends. Siemens touch screen control with hydraulic solenoid valve drive. High positioning accuracy and excellent correction results. Max. correction force 200t.</p><div class="product-specs"><span class="spec-tag spec-orange">GZ32°-56°</span><span class="spec-tag spec-orange">Max. 200t Force</span><span class="spec-tag spec-orange">Wall 8-35mm</span></div></div>
+      </div>
+      <div class="product-card">
+        <div class="product-img"><img src="dgy_crane.jpg" alt="Tracked Emergency Repair Vehicle" loading="lazy" /><span class="product-cat cat-orange">EMERGENCY</span></div>
+        <div class="product-body"><h3>Tracked Emergency Repair Vehicle</h3><p>Professional pipeline emergency maintenance equipment. Tracked chassis adapts to all terrain types, enabling rapid response to pipeline leakage sites. Complete welding repair tools onboard for fast pipeline restoration.</p><div class="product-specs"><span class="spec-tag spec-orange">All-Terrain Tracks</span><span class="spec-tag spec-orange">Rapid Response</span><span class="spec-tag spec-orange">Emergency Use</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-header">
+    <span class="section-tag">PROJECT CASES</span>
+    <div class="section-title">OUR PROJECTS</div>
+    <div class="divider"></div>
+    <p class="section-desc">Serving major domestic and international pipeline engineering projects with rich field construction experience.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card"><div class="project-num">01</div><h3>National Pipeline Network Long-Distance Pipeline Project</h3><p>Provided DGY series pipe-laying cranes and complete pipeline construction equipment covering hundreds of kilometers of long-distance pipelines, significantly shortening construction time with quality welds.</p></div>
+    <div class="project-card"><div class="project-num">02</div><h3>Sinopec Urban Gas Pipeline Renovation</h3><p>Deployed KY series beveling machines and HY series full hydraulic welding stations for urban gas pipeline renovation, achieving a first-pass weld acceptance rate of over 99%.</p></div>
+    <div class="project-card"><div class="project-num">03</div><h3>Mountain Terrain Pipeline Construction</h3><p>Provided YG series tracked pipe carriers, mountain pipe-laying cranes and other mountain-specific equipment, solving pipeline laying challenges in complex terrain for highland long-distance pipeline projects.</p></div>
+    <div class="project-card"><div class="project-num">04</div><h3>Middle East Natural Gas Pipeline Project</h3><p>Exported pipeline construction equipment to the Middle East. Equipment operated stably in extreme desert conditions, meeting the wide temperature range of −20°C to +50°C requirements, receiving high client praise.</p></div>
+    <div class="project-card"><div class="project-num">05</div><h3>CNPC Pipeline Anti-Corrosion Project</h3><p>Integrated PY series sandblasting stations and HWZ infrared heating stations for a comprehensive anti-corrosion construction solution, achieving Sa2.5~3 grade rust removal and corrosion protection standards.</p></div>
+    <div class="project-card"><div class="project-num">06</div><h3>Pipeline Emergency Maintenance Services</h3><p>Provided heating & demagnetizing units, split-type beveling machines and other professional maintenance equipment with on-site technical support for CNOOC and China Railway, enabling rapid response to pipeline leaks.</p></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-header">
+    <span class="section-tag">SERVICE & SUPPORT</span>
+    <div class="section-title">OUR SERVICES</div>
+    <div class="divider"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">🔧</div><h3>Pre-Sale Solution Design</h3><p>Equipment selection advice and construction solution design based on project conditions, terrain and pipe specifications to ensure optimal equipment-project matching.</p></div>
+    <div class="service-card"><div class="service-icon">🚛</div><h3>Equipment Leasing & Logistics</h3><p>Flexible equipment leasing options with nationwide transportation and on-site commissioning support, reducing client procurement costs with fast project response.</p></div>
+    <div class="service-card"><div class="service-icon">👷</div><h3>On-Site Technical Support</h3><p>Professional engineering team providing equipment installation, commissioning, operator training, maintenance guidance and full-process technical follow-up throughout the project.</p></div>
+    <div class="service-card"><div class="service-icon">🔍</div><h3>Pipeline Inspection Services</h3><p>Holding anti-corrosion inspection qualifications, using advanced domestic and international testing instruments for scientific qualitative and quantitative inspection of every construction process.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-header">
+    <span class="section-tag">GET IN TOUCH</span>
+    <div class="section-title">CONTACT US</div>
+    <div class="divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Get In Touch With Us</h3>
+      <div class="contact-item"><div class="contact-icon">👤</div><div class="contact-detail"><strong>Contact Person</strong><span>An Guoying</span></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-detail"><strong>Phone</strong><span><a href="tel:18131673590">+86 18131673590</a> / <a href="tel:02229477939">+86 22-29477939</a></span></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><strong>Email</strong><span><a href="mailto:yingxiao706@gmail.com">yingxiao706@gmail.com</a></span></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><strong>Business Email</strong><span><a href="mailto:tjpplen@163.com">tjpplen@163.com</a></span></div></div>
+      <div class="contact-item"><div class="contact-icon">🏭</div><div class="contact-detail"><strong>Address</strong><span>No. 8 Guxing Road, Jingbin Industrial Park, Wuqing District, Tianjin, China</span></div></div>
+      <div class="contact-item"><div class="contact-icon">🌐</div><div class="contact-detail"><strong>Website</strong><span><a href="https://www.pipelinen.com" target="_blank">www.pipelinen.com</a></span></div></div>
+      <a class="whatsapp-btn" href="https://wa.me/0971588589236" target="_blank">💬 WhatsApp Inquiry</a>
+    </div>
+    <div class="contact-form">
+      <h3>Send Inquiry</h3>
+      <div class="form-group"><label>Name *</label><input type="text" placeholder="Your name" /></div>
+      <div class="form-group"><label>Contact *</label><input type="text" placeholder="Phone or Email" /></div>
+      <div class="form-group">
+        <label>Product of Interest</label>
+        <select>
+          <option value="">Select product series</option>
+          <optgroup label="Pipeline Construction Equipment">
+            <option>DGY Series Pipe-Laying Crane</option>
+            <option>HY Series Full Hydraulic Welding Station</option>
+            <option>HL Series Wheeled Welding Station</option>
+            <option>KY Series Beveling Machine</option>
+            <option>Large Diameter Beveling Machine</option>
+            <option>RDZ Series Induction Heating Station</option>
+            <option>HWZ Series Infrared Heating Station</option>
+            <option>PY Series Enclosed Sandblasting Station</option>
+            <option>DNQ Series Internal Line-Up Clamp</option>
+            <option>DW Series External Line-Up Clamp</option>
+            <option>CB Series Hydraulic Pipe Bender</option>
+            <option>IWM Internal Welding Robot</option>
+            <option>Wireless Data Collector</option>
+            <option>Wind Shelter</option>
+            <option>Pipe Cradle</option>
+            <option>Solar Surveillance & Lighting Tower</option>
+          </optgroup>
+          <optgroup label="Mountain Construction Equipment">
+            <option>YG Series Tracked Pipe Carrier</option>
+            <option>Mountain Pipe-Laying Crane</option>
+            <option>Mountain Welding Station</option>
+            <option>Tunnel Construction Equipment</option>
+            <option>Flexible Internal Line-Up Clamp</option>
+          </optgroup>
+          <optgroup label="Maintenance & Repair Equipment">
+            <option>RDY Series Induction Heater</option>
+            <option>Split-Type Pipe Beveling Machine</option>
+            <option>CDM Pipeline Demagnetizer</option>
+            <option>Heating & Demagnetizing All-in-One</option>
+            <option>Pipe End Corrector</option>
+            <option>Tracked Emergency Repair Vehicle</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group"><label>Project Requirements</label><textarea placeholder="Please describe your project overview, pipe specifications, schedule requirements, etc..."></textarea></div>
+      <button class="form-submit" type="button">Submit Inquiry</button>
+      <p class="form-note">We will contact you within 1 business day</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Tianjin Pipelinon Energy Technology Co., Ltd. · PIPELINON</strong></p>
+  <p style="margin-top:6px;">Excellence in Pipeline Machinery · Dedicated Pipeline Services | Tel: +86 22-29477939 | No. 8 Guxing Road, Jingbin Industrial Park, Wuqing District, Tianjin, China</p>
+  <p style="margin-top:6px;">© 2026 PIPELINON All Rights Reserved. | <a href="mailto:tjpplen@163.com" style="color:rgba(255,255,255,0.4)">tjpplen@163.com</a></p>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
 </body>
 </html>
